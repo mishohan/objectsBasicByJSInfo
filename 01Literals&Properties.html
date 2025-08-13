@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Basics: Literals and Properties</title>
+</head>
+<body>
+    <script>
+
+        // Declering Object : Empty Cabinet
+        let user = new Object(); // 'Object Constructor' Syntax
+        let users = {}; // 'Object Literal' Syntax
+
+        // {"Key: Value"} Pairs: AKA property values
+        let user1 = {       // an object
+            name: "John",   // by key "name" store value "John"
+            age: 30          // by key "age" store value 30
+        };
+
+        // Reading property values:
+        console.log(user1.name); // John
+        console.log(user1.age); // 30
+
+        // Objects values can be of any type
+        user1.isAdmin = true;
+        console.log(user1.isAdmin);
+
+        // Removing a property
+        delete user1.age;
+        console.log(user1); // {name: 'John', isAdmin: true}
+
+        // Multiword Property name in object
+        let user2 = {
+            name: 'John',
+            age: 30,
+            'Likes birds': true // Multiword must be quoted
+        };
+
+        // The last property may end with a comma:
+        let user3 = {
+            name: 'John',
+            age: 30,
+            'Likes birds': true, // Ends with a comma called- 'Trailing' or 'Hanging' comma
+        };
+
+    </script>
+</body>
+</html>
