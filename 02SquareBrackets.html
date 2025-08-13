@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Brackets</title>
+</head>
+<body>
+    <script>
+        
+        let user = {
+            name: 'John',
+            age: 30, 
+        };
+
+        // For multiword properties, the dot access doesn't work
+        // user.likes birds = true;
+
+        // Alternatively
+        user['likes birds'] = true; // works
+        console.log(user['likes birds']); // true
+        delete user['likes birds'];
+
+        // 
+        let key = prompt('What do you want to know about the user?', 'name');
+        //access by variable
+        alert(user[key]); // John
+        
+        // the dot notation cann't be used this way:
+        let keys = 'name';
+        console.log(user.keys);
+
+        // Computed Properties
+        let fruits = prompt('Which fruit to buy?' , 'apple');
+        let bag = {
+            [fruits]: 5, // the name of the property is taken from the variable fruit
+        };
+        // let bag = {}; bag[fruit] = 5;
+        alert(bag.apple); 5 
+        
+        // A bit more complex expression
+        let fruit = 'apple';
+        let bags = {
+            [fruit + 'Computers']: 5 // bag.appleComputers = 5
+    };
+
+
+    // Property Value shorthand
+
+    function makeUser(name, age){
+        return{
+            name: name,
+            age: age,
+            // ...other properties
+        };
+    }
+
+    let userss = makeUser('John', 30);
+    console.log(userss);98  
+
+    // Similarly
+    function makeUsers(name, age){
+        return{
+            name, // same as name: name
+            age, // same as age: age
+        };
+    }
+
+    </script>
+</body>
+</html>
