@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Existence Test, 'in' Operator</title>
+</head>
+<body>
+    <script>
+        // Non-existing Property Retrns undefined.
+        let user1= {};
+        console.log(user1.noSuchProperty === undefined); // true
+
+        // There's also special operator for this: "in"
+        // "key" in object 
+
+        let user2 = {name: 'John', age: 30};
+
+        console.log("age" in user2); // true, the value exist
+        console.log('blaba' in user2); // false, doesn't exist
+
+        // If omited property name infront of "in": have to declear
+        //  a variable containing quoted name
+        let user3 = {age: 30};
+        let key = "age";
+        console.log(key in user3); // true
+
+        //
+
+        let obj = {
+            test: undefined
+        }
+
+        console.log(obj.test); // undefined
+        console.log("test" in obj); // true
+
+
+    </script>
+</body>
+</html>
