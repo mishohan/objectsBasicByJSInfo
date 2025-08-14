@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The "for...in" Loop</title>
+</head>
+<body>
+    <script>
+
+        // Basic Format
+        // for( key in object ) { code };
+
+        // Example
+        let user = {
+            name: 'John',
+            age: 30,
+            isAdmin: true,
+        };
+
+        for( let key in user){
+            // keys
+            console.log(key);           // name, age, isAdmin
+            // values for the keys  
+            console.log(user[key]);     // John, 30, true
+        }
+
+        // Ordered like an Object: in a special fashion
+
+        let codes = {
+            "49" : "Germany",
+            "41" : "Switzerland",
+            "44" : "Great Britain",
+            "1"  : "USA",
+        };
+
+        for(let code in codes){
+            console.log(code); // 1, 41, 44, 49 : intergers get sorted
+        }  
+
+        // others appear in creation order
+
+        let obj = {
+            name: 'John',
+            surname: 'smith',
+        };
+        obj.age = 25; // adding one more
+
+        for(let prop in obj){
+            console.log(prop); // name, surname, age
+        }
+
+        // for making Germany come first 
+
+        let numberCode = {
+            "+49": "Germany",
+            "+41": "Switzerland",
+            "+44": "Great Britain",
+            "+1": "USA"
+        };
+
+        for(let code in numberCode){
+            console.log(code); // 49, 41, 44, 1
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
