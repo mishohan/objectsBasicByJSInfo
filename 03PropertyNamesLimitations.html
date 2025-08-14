@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Names Limitations</title>
+</head>
+<body>
+    <script>
+        // For object these is not restriction on using 'for', 'let' as variable name
+        let obj = {
+            for: 1, 
+            let: 2,
+            return: 3,
+        };
+        console.log(obj); // {for: 1, let: 2, return: 3}
+
+        // There is no limit on variable name decleration on object
+        let objtect = {
+            0: 'test' // same as '0': 'test'
+        };
+        console.log(objtect['0']); // test
+        console.log(objtect[0]); // test
+
+        // But there is only one exception: _proto_
+
+        let objects = {};
+        objects._proto_ = 5;
+        console.log(objects._proto_); // well it's suppose to not work but it does; [object Object]
+
+    </script>
+</body>
+</html>
